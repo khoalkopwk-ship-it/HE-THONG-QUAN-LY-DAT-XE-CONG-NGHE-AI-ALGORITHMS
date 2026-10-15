@@ -102,12 +102,12 @@ graph TD
 ### 5.1. Giá trị học thuật đối với Chuyên ngành Trí tuệ Nhân tạo
 
 1. **Hiểu sâu bản chất Không gian trạng thái (State Space) và Đồ thị tri thức không gian (Spatial Graph):**
-   - Không còn dừng lại ở các bài toán đồ chơi (Toy Problems) như mê cung ma trận lưới 2D hay bài toán 8-puzzle, sinh viên được trực tiếp mô hình hóa một mạng lưới giao thông thực tế thành đồ thị có trọng số với hàng trăm nút tọa độ GPS thực tế.
+   - Mô hình hóa một mạng lưới giao thông thực tế thành đồ thị có trọng số với hàng trăm nút tọa độ GPS thực tế.
 2. **Kỹ năng thiết kế hàm Heuristic Admissible và Consistent:**
-   - Khi áp dụng thuật toán $A^*$, sinh viên chứng minh được rằng hàm khoảng cách trắc địa Haversine ($h(n)$) trên mặt cầu luôn là một **Admissible Heuristic** (vì khoảng cách đường chim bay luôn nhỏ hơn hoặc bằng khoảng cách di chuyển thực tế trên mạng đường: $h(n) \le h^*(n)$).
+   - Khi áp dụng thuật toán $A^*$, chứng minh được rằng hàm khoảng cách trắc địa Haversine ($h(n)$) trên mặt cầu luôn là một **Admissible Heuristic** (vì khoảng cách đường chim bay luôn nhỏ hơn hoặc bằng khoảng cách di chuyển thực tế trên mạng đường: $h(n) \le h^*(n)$).
    - Nhờ đó, thuật toán $A^*$ luôn đảm bảo tính tối ưu toàn cục ($\text{Optimality}$) nhưng giảm thiểu đáng kể số nút phải duyệt so với Uniform Cost Search (Dijkstra).
 3. **Phân tích so sánh đa thuật toán (Algorithm Profiling & Benchmarking):**
-   - Sinh viên trực tiếp xây dựng môi trường thử nghiệm đối chứng (A/B Testing cho thuật toán), đánh giá định lượng:
+   - Xây dựng môi trường thử nghiệm đối chứng, đánh giá định lượng:
      - *Local Search vs Graph Traversal (BFS/DFS/UCS):* Thấy rõ ưu thế của Local Search khi lọc nhanh theo không gian Euclidean/Haversine mà không cần duyệt toàn bộ cây đồ thị.
      - *$A^*$ vs UCS vs Greedy Best-First:* Chứng minh thực nghiệm việc $A^*$ cân bằng hoàn hảo giữa hàm chi phí thực tế $g(n)$ và hàm ước lượng $h(n)$, tránh việc duyệt mù quáng như UCS và tránh rơi vào bẫy cục bộ không tối ưu như Greedy Search.
 4. **Mô hình hóa hệ thống Đa tác tử (Agent-based Modeling):**
