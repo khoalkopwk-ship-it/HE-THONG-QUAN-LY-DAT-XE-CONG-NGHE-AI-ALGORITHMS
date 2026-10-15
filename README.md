@@ -1,7 +1,4 @@
-# BÁO CÁO TỔNG QUAN VÀ PHÂN TÍCH CHUYÊN SÂU DỰ ÁN
 # QKM SMARTRIDE: HỆ THỐNG ĐẶT XE CÔNG NGHỆ THÔNG MINH
-
----
 
 ## 1. Giới thiệu ứng dụng 
 
@@ -11,8 +8,6 @@
   - *Thuật toán định tuyến đường đi:* **A\*** (thuật toán trọng tâm), **UCS (Dijkstra)**, **BFS**, **DFS**, **Greedy Best-First Search**.
 - **Xây dựng công cụ phân tích và đối sánh hiệu năng (Benchmarking Suite):** Đo lường định lượng các chỉ số: thời gian xử lý ($\text{ms}$), số lượng node mở rộng/duyệt ($\text{Visited Nodes}$), chi phí đường đi ($\text{Cost/Distance}$), tỷ lệ tối ưu nghiệm.
 - **Tích hợp bộ biên tập đồ thị giao thông tương tác (Interactive Graph Editor):** Cho phép người dùng can thiệp trực tiếp vào cấu trúc đường, cắm biển cấm đường, thiết lập độ khó đi (đường xấu x1.5, đường rất xấu x2.0) để quan sát khả năng tái định tuyến (dynamic rerouting) thông minh của các thuật toán.
-
----
 
 ## 2. Công nghệ & Thư viện sử dụng (Tech Stack & Libraries)
 
@@ -43,8 +38,6 @@ graph TD
 | **Công thức địa lý mặt cầu** | `Haversine formula` (`geo.py`) | Tính toán khoảng cách trắc địa đường cong mặt cầu Trái Đất ($R \approx 6371\text{ km}$) dựa trên vĩ độ/kinh độ chính xác, dùng làm hàm đánh giá khoảng cách và Heuristic cho thuật toán $A^*$. |
 | **Thuật toán Nội suy Tọa độ** | `Linear Interpolation` (`geo.py`) | Chia nhỏ từng cạnh đường thành $k=5$ điểm phụ trợ, giúp animation chuyển động của marker xe di chuyển trơn tru trên bản đồ. |
 | **Quản lý dữ liệu JSON** | `data/driver_profiles.json` | Lưu trữ hồ sơ định danh tài xế: Họ tên, số điện thoại, biển số, loại phương tiện, sao đánh giá (Rating), tỷ lệ nhận chuyến, nhãn tài xế 5 sao. |
-
----
 
 ## 3. Các tính năng chính của hệ thống (Key Features)
 
@@ -78,8 +71,6 @@ graph TD
 
 #### Quản lý Lịch sử Chuyến đi & Thẻ Hồ sơ Tài xế (Driver Profile Modal)
 
----
-
 ## 4. Các yếu tố nổi bật:
 
 ### 🌟 4.1. Kỹ thuật "Snap-to-road" và Cơ chế Tạo Dynamic Node trên Bản đồ Thực tế
@@ -106,8 +97,6 @@ graph TD
   - Thiết kế **Splitter Bar** cho phép người dùng kéo thả thay đổi kích thước linh hoạt giữa khung Bản đồ và khung Dashboard.
   - Thanh Navigation Rail thông minh: Tự động mở rộng khi rê chuột (`<Enter>`) và thu gọn khi rời chuột (`<Leave>`), tiết kiệm tối đa diện tích hiển thị bản đồ.
 
----
-
 ## 5. Kỹ năng học được thông qua dự án:
 
 ### 5.1. Giá trị học thuật đối với Chuyên ngành Trí tuệ Nhân tạo
@@ -129,5 +118,3 @@ graph TD
 - **Lập trình Hướng đối tượng nâng cao (OOP):** Tận dụng tối đa `dataclass`, đóng gói trạng thái, quản lý vòng đời chuyến đi thông qua các lớp thực thể `Driver`, `Customer`, `ActiveRide`, `RideHistory`.
 - **Tối ưu hóa thuật toán & Cấu trúc dữ liệu:** Sử dụng `heapq` (Min-heap / Priority Queue) cho $A^*$ và UCS để đạt độ phức tạp $O(E \log V)$, sử dụng `collections.deque` cho BFS để đạt $O(1)$ cho thao tác pop/append, gom nhóm tài xế theo node để truy vấn tức thời $O(1)$.
 - **Kỹ năng trực quan hóa dữ liệu (Data & Algorithm Visualization):** Khả năng chuyển đổi các cấu trúc dữ liệu trừu tượng thành giao diện đồ họa sống động, giúp người xem dễ dàng hiểu được luồng đi của thuật toán.
-
----
